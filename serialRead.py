@@ -31,32 +31,3 @@ def cod_serial(valor, constant, offset, gain):
     res = (((highByte | lowByte) * constant) + offset)/gain
 
     return res
-
-"""def main():
-    parent_conn, child_conn = Pipe(duplex=False)
-    
-    procs = []
-    procs.append(Process(target=leitura_serial_driver, args=(child_conn,)))
-    procs.append(Process(target=principal.leitura, args=(parent_conn,)))
-    map(lambda x: x.start(), procs)
-    map(lambda x: x.join(), procs)
-
-
-    Label(win, text="Portas disponíveis").pack()
-
-    frame = Frame(win)
-    frame.pack()
-
-    listNodes = Listbox(frame, width=25, height=5, font=("Helvetica", 12))
-    listNodes.pack(side="left", fill="y")
-
-    scrollbar = Scrollbar(frame, orient="vertical")
-    scrollbar.config(command=listNodes.yview)
-    scrollbar.pack(side="right", fill="y")
-
-    result = app.serial_ports()
-    for port in result:
-        listNodes.insert(END, "%s" % port)
-
-if __name__ == "__main__":
-    main()"""
